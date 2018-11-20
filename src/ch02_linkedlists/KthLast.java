@@ -61,6 +61,8 @@ public class KthLast {
 		ll.push(20);
 		ll.push(50);
 		
+		int x = ll.Kth(3, ll.count());
+		System.out.println(x);
 	}
 
 }
