@@ -2,19 +2,30 @@ package ch02_linkedlists;
 
 public class RemoveDups
 {
-	Node head;
-	public static void main(String args[])
+	static Node head;
+
+	public void noDup()
 	{
-		
-	}
-	public static Node noDup(Node head)
-	{
-		Node n =head;
-		while(n != null)
+		Node current = head;
+		Node next_next;
+		if(head ==null)
 		{
-			
+			return;
 		}
-		return head;
+		while(current.next != null)
+		{
+			if(current.data == current.next.data)
+			{
+				next_next =current.next.next;
+				current.next = null;
+				current.next = next_next;
+			}
+			else
+			{
+				current = current.next;
+			}
+		}
+		
 	}
 	// Utility Functions
 		public void push(int new_data)
@@ -34,5 +45,23 @@ public class RemoveDups
 	         }   
 	         System.out.println(); 
 	     } 
+		
+		public static void main(String args[])
+		{
+			RemoveDups ll = new RemoveDups();
+			ll.push(10);
+			ll.push(10);
+			ll.push(20);
+			ll.push(20);
+			ll.push(30);
+			ll.push(30);
+			ll.push(30);
+			ll.push(40);
+			ll.push(50);
+			ll.push(50);
+
+			ll.noDup();
+			ll.printList();
+		}
 }
 
