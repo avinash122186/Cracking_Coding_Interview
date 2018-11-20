@@ -10,6 +10,7 @@ public class KthLast {
 		while(current.next != null)
 		{
 			count++;
+			current = current.next;
 		}
 		return count;
 	}
@@ -19,7 +20,7 @@ public class KthLast {
 		Node current = head;
 		int element = count -k;
 		int checker =0;
-		while(current.next != null && checker <=element )
+		while(current != null )
 		{	
 			if(checker == element)
 			{
@@ -60,8 +61,8 @@ public class KthLast {
 		ll.push(40);
 		ll.push(20);
 		ll.push(50);
-		
-		int x = ll.Kth(3, ll.count());
+		ll.printList();
+		int x = ll.Kth(4, ll.count());
 		System.out.println(x);
 	}
 
