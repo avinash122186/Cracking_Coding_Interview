@@ -27,6 +27,34 @@ public class RemoveDups
 		}
 		
 	}
+	
+	public void noDuplicatUnsorted()
+	{
+		Node current_1 = head;
+		Node current_2;
+		if(head == null)
+		{
+			return;
+		}
+		
+		while(current_1!=null && current_1.next !=null)
+		{
+			current_2 = current_1;
+			while(current_2.next != null)
+			{
+				if(current_1.data == current_2.next.data)
+				{
+					current_2.next = current_2.next.next;
+					
+				}
+				else
+				{
+					current_2 = current_2.next;
+				}
+			}
+			current_1 = current_1.next;
+		}
+	}
 	// Utility Functions
 		public void push(int new_data)
 		{
@@ -50,17 +78,18 @@ public class RemoveDups
 		{
 			RemoveDups ll = new RemoveDups();
 			ll.push(10);
-			ll.push(10);
-			ll.push(20);
+			ll.push(60);
+			ll.push(30);
 			ll.push(20);
 			ll.push(30);
-			ll.push(30);
+			ll.push(50);
 			ll.push(30);
 			ll.push(40);
+			ll.push(20);
 			ll.push(50);
-			ll.push(50);
-
-			ll.noDup();
+			//ll.noDup();
+			ll.printList();
+			ll.noDuplicatUnsorted();
 			ll.printList();
 		}
 }
