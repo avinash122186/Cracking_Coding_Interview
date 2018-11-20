@@ -29,6 +29,7 @@ public class OneAway {
 		{
 			if(s1.charAt(i) != s2.charAt(i))
 			{
+				s1.charAt(i);
 				
 			}
 		}
